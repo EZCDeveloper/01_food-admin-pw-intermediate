@@ -1,5 +1,6 @@
 import { test } from '../fixtures/base.fixture.ts';
 import { expect } from '@playwright/test';
+import { URL } from '../fixtures/data/url-copy.ts';
 
 
 test.describe('1. Orders', () => {
@@ -7,7 +8,7 @@ test.describe('1. Orders', () => {
     test('TC-1.1. Export a CSV File Successfully',
         async ({ basePage, ordersPage, orderHelpers }) => {
             // 1. Navigate to Orders page
-            await basePage.navigateTo('/orders');
+            await basePage.navigateTo(URL.ORDERS);
             await basePage.waitForPageLoad('networkidle');
 
             // 2. Click Export button and get download
@@ -30,7 +31,7 @@ test.describe('1. Orders', () => {
     test('TC-1.2. Verify that the CSV content is correct',
         async ({ basePage, ordersPage, orderHelpers }) => {
             // 1. Navigate to Orders page
-            await basePage.navigateTo('/orders');
+            await basePage.navigateTo(URL.ORDERS);
             await basePage.waitForPageLoad('networkidle');
 
             // 2. Click Export button and get download
