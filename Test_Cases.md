@@ -52,30 +52,3 @@
 3. Download and open the CSV file.
 4. Verify that the first row contains the correct headers (`id, amount, orderNumber, status, store, user`).
 5. Verify that exists at least 1 order.
-
----
-
-## TC-1.1.3. Verify That the Button Is Disabled If There Is an Export Error
-
-**Description**
-
-📌 **Description:**
-
-- **Given** the user is logged in as an administrator or restaurant employee
-- **When** there is an API or backend error preventing the CSV export
-- **Then** the **"Export to CSV"** button should be disabled, or an error message should be displayed to the user
-
-📌 **Preconditions:**
-
-- An API or backend error that generates the CSV must be simulated.
-
-📌 **Expected Result:**
-
-- The export button should be disabled, or an error message should be displayed.
-
-📌 **Steps:**
-
-1. Navigate to “Orders” page.
-2. Simulate an export API failure (e.g., by disconnecting the server).
-3. Attempt to click on **"Export to CSV"**.
-4. Verify that the button is disabled or that an error message is displayed.
